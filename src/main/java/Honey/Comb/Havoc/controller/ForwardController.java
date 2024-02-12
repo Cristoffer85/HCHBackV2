@@ -5,16 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("")
-public class NewController {
+@RequestMapping("/api")
+public class ForwardController {
 
     @GetMapping("")
-    public String welcome() {
-        return "Startsida";
-    }
-
-    @GetMapping("/about")
-    public String about() {
-        return "About!";
+    public String sayHelloWorld() {
+        return "This is the final message!";
     }
 }
