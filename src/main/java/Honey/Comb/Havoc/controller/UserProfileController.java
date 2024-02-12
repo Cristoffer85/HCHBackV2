@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/user_profiles")
+@RequestMapping("/api/userprofiles")
 public class UserProfileController {
 
     @Autowired
     private UserProfileService userProfileService;
 
-    @GetMapping("")
+    @GetMapping
     public List<UserProfile> getAllUserProfiles() {
         return userProfileService.getAllUserProfiles();
     }
@@ -25,14 +25,14 @@ public class UserProfileController {
         return userProfileService.getUserProfileById(id);
     }
 
-    @PostMapping("")
+    @PostMapping
     public UserProfile createUserProfile(@RequestBody UserProfile userProfile) {
         return userProfileService.createUserProfile(userProfile);
     }
 
     @PutMapping("/{id}")
-    public UserProfile updateUserProfile(@PathVariable String id, @RequestBody UserProfile userProfile) {
-        return userProfileService.updateUserProfile(id, userProfile);
+    public void updateUserProfile(@PathVariable String id, @RequestBody UserProfile userProfile) {
+        userProfileService.updateUserProfile(id, userProfile);
     }
 
     @DeleteMapping("/{id}")
@@ -40,4 +40,6 @@ public class UserProfileController {
         userProfileService.deleteUserProfile(id);
     }
 }
+
+
 
