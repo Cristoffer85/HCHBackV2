@@ -1,13 +1,13 @@
-package com.marcus.awsWebServiceTest;
+package Honey.Comb.Havoc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AwsWebServiceTestApplication {
+public class Back_Main {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AwsWebServiceTestApplication.class, args);
+		SpringApplication.run(Back_Main.class, args);
 	}
 
 }
