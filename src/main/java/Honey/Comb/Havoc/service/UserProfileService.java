@@ -30,7 +30,7 @@ public class UserProfileService {
         return userProfileRepository.save(userProfile);
     }
 
-    public UserProfile updateUserProfile(String userId, UserProfile updatedUserProfile) {
+    public List<UserProfile> updateUserProfile(String userId, UserProfile updatedUserProfile) {
         Optional<UserProfile> existingUserProfile = userProfileRepository.findById(userId);
 
         if (existingUserProfile.isPresent()) {
@@ -39,17 +39,16 @@ public class UserProfileService {
             userProfile.setEmail(updatedUserProfile.getEmail());
 
             // Save the updated profile
-            return userProfileRepository.save(userProfile);
+            userProfileRepository.save(userProfile);
         }
 
-        return null;
+        return userProfileRepository.findAll();
     }
 
-    public boolean deleteUserProfile(String userId) {
+    public List<UserProfile> deleteUserProfile(String userId) {
         if (userProfileRepository.existsById(userId)) {
             userProfileRepository.deleteById(userId);
-            return true;
         }
-        return false;
+        return userProfileRepository.findAll();
     }
 }

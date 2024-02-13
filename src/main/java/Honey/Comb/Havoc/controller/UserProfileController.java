@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/userprofiles")
 public class UserProfileController {
@@ -40,19 +42,20 @@ public class UserProfileController {
     }
 
     @PutMapping("/{userId}")
-    public ResponseEntity<UserProfile> updateUserProfile(@PathVariable String userId, @RequestBody UserProfile updatedUserProfile) {
-        UserProfile userProfile = userProfileService.updateUserProfile(userId, updatedUserProfile);
-        return (userProfile != null)
-                ? new ResponseEntity<>(userProfile, HttpStatus.OK)
+    public ResponseEntity<List<UserProfile>> updateUserProfile(@PathVariable String userId, @RequestBody UserProfile updatedUserProfile) {
+        List<UserProfile> updatedUserProfiles = userProfileService.updateUserProfile(userId, updatedUserProfile);
+        return (updatedUserProfiles != null && !updatedUserProfiles.isEmpty())
+                ? new ResponseEntity<>(updatedUserProfiles, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping("/{userId}")
-    public ResponseEntity<Void> deleteUserProfile(@PathVariable String userId) {
-        boolean deleted = userProfileService.deleteUserProfile(userId);
-        return (deleted)
+    public ResponseEntity<List<UserProfile>> deleteUserProfile(@PathVariable String userId) {
+        List<UserProfile> updatedUserProfiles = userProfileService.deleteUserProfile(userId);
+        return (updatedUserProfiles != null && !updatedUserProfiles.isEmpty())
                 ? new ResponseEntity<>(HttpStatus.NO_CONTENT)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
+
 
