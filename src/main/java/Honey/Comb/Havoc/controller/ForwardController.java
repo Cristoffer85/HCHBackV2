@@ -1,4 +1,3 @@
-/*
 package Honey.Comb.Havoc.controller;
 
 
@@ -13,4 +12,4 @@ public class ForwardController {                      // Class that connects (fo
         return "forward:/frontend/index.html";
     }
 }
-*/
+
