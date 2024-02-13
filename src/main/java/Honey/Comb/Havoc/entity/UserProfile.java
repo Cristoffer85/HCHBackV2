@@ -7,6 +7,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.UUID;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,5 +20,11 @@ public class UserProfile {
 
     private String username;
     private String email;
+
+    public UserProfile(String username, String email) {
+        this.id = UUID.randomUUID().toString();
+        this.username = username;
+        this.email = email;
+    }
 }
 
