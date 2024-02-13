@@ -1,4 +1,4 @@
-package Honey.Comb.Havoc.controller;
+/*package Honey.Comb.Havoc.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,4 +12,4 @@ public class ForwardController {
     public String sayHelloWorld() {
         return "This is the final message!";
     }
-}
+}*/
