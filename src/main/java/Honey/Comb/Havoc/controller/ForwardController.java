@@ -1,4 +1,6 @@
+/*
 package Honey.Comb.Havoc.controller;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,3 +13,4 @@ public class ForwardController {                      // Class that connects (fo
         return "forward:/frontend/index.html";
     }
 }
+*/
