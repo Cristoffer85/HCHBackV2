@@ -16,9 +16,7 @@ public class UserProfile {
     @Id
     private String id;
 
-    @Indexed(unique = true)
     private String username;
-
     private String email;
 }
 
