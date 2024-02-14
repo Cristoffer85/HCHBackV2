@@ -20,11 +20,5 @@ public class UserProfile {
 
     private String username;
     private String email;
-
-    public UserProfile(String username, String email) {
-        this.id = UUID.randomUUID().toString();
-        this.username = username;
-        this.email = email;
-    }
 }
 
