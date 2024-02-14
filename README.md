@@ -70,3 +70,4 @@ Classmates from school, family, myself, Mighty Duck rubber duck and some chatGPT
 - [x] CICD-pipeline on AWS (Beanstalk EC2)
 - [x] Github Actions .yml-files (maven and super-linter)
 - [x] Fully functional frontend application (connected with by a local repo)
+- [x] JUnit tests
