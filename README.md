@@ -45,8 +45,8 @@ CLOUD/ONLINE: (The application is deployed on AWS Elastic Beanstalk)
                 set Body -> raw -> JSON format
 
                                                    {
-                                                     "username": "",
-                                                     "email": ""
+                                                     "username": "{username}",
+                                                     "email": "{email}"
                                                    }
                                                                                    
                                                                             -> Send
